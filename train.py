@@ -1,5 +1,4 @@
 # USAGE
-# python train_mask_detector.py --dataset dataset
 
 # import the necessary packages
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -19,7 +18,6 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from imutils import paths
-import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 import os
@@ -28,17 +26,15 @@ import os
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", default="dataset",
 	help="path to input dataset")
-ap.add_argument("-p", "--plot", type=str, default="plot.png",
-	help="path to output loss/accuracy plot")
 ap.add_argument("-m", "--model", type=str,
-	default="mask_detector.model",
+	default="face_detector.model",
 	help="path to output face mask detector model")
 args = vars(ap.parse_args())
 
 # initialize the initial learning rate, number of epochs to train for,
 # and batch size
 INIT_LR = 1e-4
-EPOCHS = 20
+EPOCHS = 1
 BS = 32
 
 # grab the list of images in our dataset directory, then initialize
@@ -123,18 +119,6 @@ H = model.fit(
 	validation_data=(testX, testY),
 	validation_steps=len(testX) // BS,
 	epochs=EPOCHS)
-
-# make predictions on the testing set
-print("[INFO] evaluating network...")
-predIdxs = model.predict(testX, batch_size=BS)
-
-# for each image in the testing set we need to find the index of the
-# label with corresponding largest predicted probability
-predIdxs = np.argmax(predIdxs, axis=1)
-
-# show a nicely formatted classification report
-print(classification_report(testY.argmax(axis=1), predIdxs,
-	target_names=lb.classes_))
 
 # serialize the model to disk
 print("[INFO] saving mask detector model...")
