@@ -15,5 +15,5 @@ The goal of the project was to get familiar with the basics of image-based machi
 ## What is a CNN
 CNNs are Neural Networks used for the purpose of analyzing images. Traditional Neural Networks work with defined inputs and outputs along with a neural layer in-between. CNNs on the other hand, links neurons to pixels that are close together so it understands how the pixels in an image are related.
 
-##OpenCV
+## OpenCV
 OpenCV is an incredibly useful Python library aimed at handling real time computer vison. In this project, OpenCV was used to handle data from the video feed.
