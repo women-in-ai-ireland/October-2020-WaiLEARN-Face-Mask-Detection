@@ -1,4 +1,4 @@
-# H1
+# team blog
 Team 2 WAI blog: Automatic face mask detection
 
 Obviously in the current climate, we must wear face masks. We thought this was an apt problem to attempt to solve and involved many different tasks, such as working with opencv, keras and flask. https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/. This tutorial served as inspiration for this project. 
@@ -19,16 +19,16 @@ CNN’s are a category of Neural networks that have proven very effective in ima
 4.	Fully connected Layer
 
 ## Convolutional layer
-	A Convolutional layer is used to extract features from the input image. Essentially a kernel or filter of mxn pixels in size hovers over each mxn section of the input image and performs point wise multiplication and then adds these values which results in a single pixel value. The traversing of this kernel across a whole filter produces something known as an activation map which will be smaller than the original image. The values which are present in this filter/kernel is what is learnt through the training process.
+A Convolutional layer is used to extract features from the input image. Essentially a kernel or filter of mxn pixels in size hovers over each mxn section of the input image and performs point wise multiplication and then adds these values which results in a single pixel value. The traversing of this kernel across a whole filter produces something known as an activation map which will be smaller than the original image. The values which are present in this filter/kernel is what is learnt through the training process.
  
 ## Activation function
-	Rectified Linear Unit (RELU) is a very commonly used activation function. RELU adds non-linearity to the activation map. Features within an image such as edges are naturally non-linear as there is an abrupt difference between these features and the surrounding objects and have no smooth linear relationship between them. Using RELU aids the model in extracting these non-linear features. RELU has also been shown to train networks faster than other activation functions.
+Rectified Linear Unit (RELU) is a very commonly used activation function. RELU adds non-linearity to the activation map. Features within an image such as edges are naturally non-linear as there is an abrupt difference between these features and the surrounding objects and have no smooth linear relationship between them. Using RELU aids the model in extracting these non-linear features. RELU has also been shown to train networks faster than other activation functions.
 
 ## Pooling Layer
-	A pooling layer is used to down sample the activation map. A window is chosen in which to traverse the activation map. Max pooling (choosing the max values from the window) is commonly used in image recognition tasks due the fact it is good at highlighting the most prevalent features in the activation map. Average pooling will smooth the image so the most prevalent features may not be retained so max pooling was chosen. The pooling layer helps to down sample the activation map and reduce computation time and memory usage of the CNN.
+A pooling layer is used to down sample the activation map. A window is chosen in which to traverse the activation map. Max pooling (choosing the max values from the window) is commonly used in image recognition tasks due the fact it is good at highlighting the most prevalent features in the activation map. Average pooling will smooth the image so the most prevalent features may not be retained so max pooling was chosen. The pooling layer helps to down sample the activation map and reduce computation time and memory usage of the CNN.
 
 ## Fully Connected Layer
-	The output from Convolutional and Pooling Layers are representative of high-level features. Using a fully connected layer is a way to combine all these high-level features in multiple combinations in order to classify input images to different classes. The high-level features could be used themselves to classify but combing these features together can result in better predictions. The output of a fully connected layer is the final prediction of the input image. A common function to output a prediction per class for the image is to use the Softmax function. Softmax will output a prediction probabilty per class which sum to 1. 
+The output from Convolutional and Pooling Layers are representative of high-level features. Using a fully connected layer is a way to combine all these high-level features in multiple combinations in order to classify input images to different classes. The high-level features could be used themselves to classify but combing these features together can result in better predictions. The output of a fully connected layer is the final prediction of the input image. A common function to output a prediction per class for the image is to use the Softmax function. Softmax will output a prediction probabilty per class which sum to 1. 
 
 
 ## Connecting the dots
