@@ -10,7 +10,7 @@ Face mask model creation
 Now we must create the model which can identify if a face possesses a mask or not. Simply, we need a dataset to train a model to do this. One can obtain a massive dataset of faces online and then obtain an image of a mask and supersede a mask over faces in half of these images which creates a balanced dataset. However, a premade dataset exists here, https://github.com/prajnasb/observations/tree/master/experiements/data. With around 700 images each per class, all are colour images with the majority being white and light blue face masks. 
 The type of model we create is a CNN, a convolutional neural network.
 
-## H3
+## H2
 CNN’s are a category of Neural networks that have proven very effective in image recognition and classification tasks. A CNN generally consists of four components,
 1.	Convolutional Layer
 2.	Activation Function
@@ -42,6 +42,3 @@ This will work well if you sit with nothing in the background as the haar cascad
 Further work
 Firstly, one can separate the model prediction step into an independent service which can be setup in flask in python where it is a service open on a port on your localhost. Then you can hit this service by sending the video stream of your pc camera using a http get request to receive a probability of a face with a face mask being present in the video stream. This is quite basic as a prediction is made per stream. We are not sure of how to make this more efficient as something like Kafka is not optimised for video stream data. 
 Once this software as a service architecture is setup, you can place the service section of the code inside a docker container and test locally. The goal of this is to be able to then deploy this docker container on AWS ECS. This will work exactly like using a local flask service, only the address of the http request you send will now be a live web address and not an address on your local pc network. 
-
-
-
