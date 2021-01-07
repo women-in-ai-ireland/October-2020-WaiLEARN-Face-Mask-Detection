@@ -1,4 +1,4 @@
-# H1
+# team 2 blog
 Team 2 WAI blog: Automatic face mask detection
 
 Obviously in the current climate, we must wear face masks. We thought this was an apt problem to attempt to solve and involved many different tasks, such as working with opencv, keras and flask. https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/. This tutorial served as inspiration for this project. 
